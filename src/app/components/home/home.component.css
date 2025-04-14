@@ -1,0 +1,134 @@
+:root {
+  --rosa-meimei: #f8cbd2;
+  --cinza-escuro: #444;
+  --cinza-claro: #f9f9f9;
+  --branco: #ffffff;
+}
+
+.body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--rosa-meimei);
+}
+
+/* Faixa superior */
+.faixa-superior {
+  background-color: var(--rosa-meimei);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 16px 0;
+  box-shadow: 0 10px 4px rgba(0,0,0,0.1);
+}
+
+.logo-centro {
+  height: 200px;
+  z-index: 1;
+}
+
+.pegadas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 180px;
+  width: 45%;
+  opacity: 0.8;
+}
+
+.pegadas-esquerda {
+  left: 16px;
+}
+
+.pegadas-direita {
+  right: 16px;
+}
+
+.centro-logo-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.centro-logo-texto h3 {
+  margin-top: 3px;
+  font-size: 1.7rem;
+  font-family: 'Dancing Script', cursive;
+  color: var(--cinza-escuro);
+}
+
+/* Menu de botões */
+.menu-botoes {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f8cbd2;
+  flex-wrap: wrap;
+}
+
+.menu-botoes button {
+  background-color: white;
+  color: var(--cinza-escuro);
+  border: none;
+  padding: 20px 40px;
+  margin: 10px;
+  border-radius: 60px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: var(--rosa-meimei);
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+.menu-botoes button:hover {
+  background-color: #f2eded;
+}
+
+/* Área de imagens clicáveis */
+.area-imagens {
+  background-color: #f8cbd2; 
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.area-imagens img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.2s;
+  margin-top: 20px;
+}
+
+.area-imagens img:hover {
+  transform: scale(1.03);
+}
+
+.area-imagens img + img {
+  margin-top: 50px;
+}
+
+/* Rodapé */
+.rodape {
+  background-color: var(--cinza-escuro);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+.rodape a {
+  color: #ffd1d1;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  text-decoration: underline;
+}

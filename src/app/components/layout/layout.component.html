@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8" />
+    <title>Abrigo Meimei</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  </head>
+  
+  <body class="body">
+  
+  <div class="faixa-superior">
+    <img src="patinhas.png" class="pegadas pegadas-esquerda" alt="Pegadas esquerda">
+  
+    <div class="centro-logo-texto">
+      <img src="logoGrande.png" class="logo-centro" alt="Logo do abrigo">
+      <h3>Um lar para cada pet</h3>
+    </div>
+  
+    <img src="patinhas.png" class="pegadas pegadas-direita" alt="Pegadas direita">
+  </div>
+  
+  <nav class="menu-botoes">
+    <button (click)="irParaPagina('home')">Pagina Inicial</button>
+    <button (click)="irParaPagina('doacoes')">Doações</button>
+    <button (click)="irParaPagina('sobreNos')">Sobre Nós</button>
+    <button (click)="irParaPagina('disponiveis')">Animais Disponíveis</button>
+    <button (click)="irParaPagina('abandono')">Informar Abandono</button>
+    <button (click)="irParaPagina('voluntariado')">Voluntariado</button>
+    <button (click)="irParaPagina('contato')">Contato</button>
+  </nav>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="rodape">
+    <div>
+      <p><strong>Endereço:</strong> Rua dos Animais Felizes, 123 - Cidade Pet</p>
+      <p><strong>Contato:</strong> (11) 99999-9999 | contato-abrigomeimei.org</p>
+      <p>
+        <strong>Redes Sociais:</strong>
+        <a href="#">Instagram</a> |
+        <a href="#">Facebook</a> |
+        <a href="#">WhatsApp</a>
+      </p>
+    </div>
+  </footer>
+  </body>
