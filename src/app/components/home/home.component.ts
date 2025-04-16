@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
+import { GridAdocaoAnimaisComponent } from '../../grid-adocao-animais/grid-adocao-animais.component';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [GridAdocaoAnimaisComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -13,18 +13,20 @@
   
   /* Faixa superior */
   .faixa-superior {
-    background-color: var(--rosa-meimei);
+    background-color: #f8cbd2;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     padding: 16px 0;
     box-shadow: 0 10px 4px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
   }
   
   .logo-centro {
-    height: 200px;
+    height: 100px;
     z-index: 1;
+    transition: all 0.3s ease;
   }
   
   .pegadas {
@@ -49,6 +51,12 @@
     flex-direction: column;
     align-items: center;
     z-index: 1;
+    padding: 0% 2% 0% 2%;
+  }
+  .botao-logo{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
   
   .centro-logo-texto h3 {
@@ -62,16 +70,16 @@
   .menu-botoes {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    background-color: #f8cbd2;
+    padding: 40px;
     flex-wrap: wrap;
+    transition: all 0.3s ease;
   }
   
   .menu-botoes button {
     background-color: white;
     color: var(--cinza-escuro);
     border: none;
-    padding: 20px 40px;
+    padding: 10px 20px;
     margin: 10px;
     border-radius: 60px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -104,3 +112,57 @@
     text-decoration: underline;
   }
   
+  .faixa-superior.reduzida {
+    padding: 8px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 60px; /* Altura reduzida */
+  }
+  /* Faixa reduzida */
+  
+  .faixa-superior.reduzida .logo-centro {
+    height: 50px;
+  }
+  
+  .faixa-superior.reduzida .pegadas {
+    height: 100px;
+    transition: all 0.3s ease;
+  }
+  
+  .faixa-superior.reduzida + .menu-botoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--rosa-meimei);
+    padding: 10px;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Container para o menu fixo */
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  main {
+    margin-top: 0;
+    transition: margin-top 0.3s ease;
+  }
+  
+  main.com-margem {
+    margin-top: 10px; /* Espaço para a barra original + menu */
+  }
+
+  main.sem-margem {
+    margin-top: 10px; /* Espaço para a barra reduzida + menu fixo */
+  }
