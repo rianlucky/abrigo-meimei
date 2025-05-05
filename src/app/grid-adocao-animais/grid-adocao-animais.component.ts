@@ -128,7 +128,7 @@ export class GridAdocaoAnimaisComponent implements OnInit {
   };
 
   tiposAnimais: string[] = ['Cachorro', 'Gato'];
-  pelagens: string[] = ['Siamês', 'Branco', 'Preto', 'Caramelo', 'Frajola', "SCinza"];
+  pelagens: string[] = ['Siamês', 'Branco', 'Preto', 'Caramelo', 'Frajola', "Cinza"];
   portes: string[] = ['Pequeno', 'Médio', 'Grande'];
   idades: string[] = ['Até 1 ano', '1 ano á 3 anos', 'Mais de 3 anos'];
 
