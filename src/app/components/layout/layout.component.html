@@ -6,41 +6,28 @@
   
   <body class="body">
   
-  <div class="faixa-superior">
-    <img src="patinhas.png" class="pegadas pegadas-esquerda" alt="Pegadas esquerda">
+  <div class="faixa-superior" [class.reduzida]="barraReduzida">
+    
   
+    <nav class="menu-botoes" [class.fixo]="barraReduzida">
+      <button (click)="irParaPagina('doacoes')">Doações</button>
+      <button (click)="irParaPagina('sobreNos')">Sobre Nós</button>
+      <button (click)="irParaPagina('disponiveis')">Animais Disponíveis</button>
+    </nav>
     <div class="centro-logo-texto">
-      <img src="logoGrande.png" class="logo-centro" alt="Logo do abrigo">
-      <h3>Um lar para cada pet</h3>
+      <button class="botao-logo" (click)="irParaPagina('home')">
+        <img src="logoGrande.png" class="logo-centro" alt="Logo do abrigo">
+      </button>
+      <h3 *ngIf="!barraReduzida">Um lar para cada pet</h3>
     </div>
-  
-    <img src="patinhas.png" class="pegadas pegadas-direita" alt="Pegadas direita">
+    <nav class="menu-botoes" [class.fixo]="barraReduzida">
+      <button (click)="irParaPagina('abandono')">Informar Abandono</button>
+      <button (click)="irParaPagina('voluntariado')">Voluntariado</button>
+      <button (click)="irParaPagina('contato')">Contato</button>
+    </nav>
   </div>
   
-  <nav class="menu-botoes">
-    <button (click)="irParaPagina('home')">Pagina Inicial</button>
-    <button (click)="irParaPagina('doacoes')">Doações</button>
-    <button (click)="irParaPagina('sobreNos')">Sobre Nós</button>
-    <button (click)="irParaPagina('disponiveis')">Animais Disponíveis</button>
-    <button (click)="irParaPagina('abandono')">Informar Abandono</button>
-    <button (click)="irParaPagina('voluntariado')">Voluntariado</button>
-    <button (click)="irParaPagina('contato')">Contato</button>
-  </nav>
-  
-  <main>
+  <main [class.com-margem]="!barraReduzida">
     <router-outlet></router-outlet>
   </main>
-
-  <footer class="rodape">
-    <div>
-      <p><strong>Endereço:</strong> Rua dos Animais Felizes, 123 - Cidade Pet</p>
-      <p><strong>Contato:</strong> (11) 99999-9999 | contato-abrigomeimei.org</p>
-      <p>
-        <strong>Redes Sociais:</strong>
-        <a href="#">Instagram</a> |
-        <a href="#">Facebook</a> |
-        <a href="#">WhatsApp</a>
-      </p>
-    </div>
-  </footer>
   </body>

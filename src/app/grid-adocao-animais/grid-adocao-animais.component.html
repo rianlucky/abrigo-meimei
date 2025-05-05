@@ -1,0 +1,60 @@
+<div class="catalogo-adocao">
+    <h2 class="titulo-catalogo">Nossos Animais para Adoção</h2>
+    
+    <div class="filtros-adocao">
+        <div class="filtro-group">
+          <label for="tipoAnimal">Animal:</label>
+          <select id="tipoAnimal" [(ngModel)]="filtros.tipo" (change)="filtrarAnimais()">
+            <option value="">Todos</option>
+            <option *ngFor="let tipo of tiposAnimais" [value]="tipo">{{tipo}}</option>
+          </select>
+        </div>
+    
+        <div class="filtro-group">
+          <label for="pelagem">Pelagem:</label>
+          <select id="pelagem" [(ngModel)]="filtros.pelagem" (change)="filtrarAnimais()">
+            <option value="">Todas</option>
+            <option *ngFor="let pelagem of pelagens" [value]="pelagem">{{pelagem}}</option>
+          </select>
+        </div>
+    
+        <div class="filtro-group">
+          <label for="porte">Porte:</label>
+          <select id="porte" [(ngModel)]="filtros.porte" (change)="filtrarAnimais()">
+            <option value="">Todos</option>
+            <option *ngFor="let porte of portes" [value]="porte">{{porte}}</option>
+          </select>
+        </div>
+    
+        <div class="filtro-group">
+          <label for="idade">Idade:</label>
+          <select id="idade" [(ngModel)]="filtros.idade" (change)="filtrarAnimais()">
+            <option value="">Todas</option>
+            <option *ngFor="let idade of idades" [value]="idade">{{idade}}</option>
+          </select>
+        </div>
+    
+        <button class="btn-limpar" (click)="limparFiltros()">Limpar Filtros</button>
+      </div>
+    
+      <div class="grid-animais">
+        <div *ngFor="let animal of animaisFiltrados" class="card-animal" [class.adotado]="animal.adotado">
+          <div class="status-adocao" *ngIf="animal.adotado">ADOTADO</div>
+          <img [src]="animal.imagem" [alt]="animal.nome" class="animal-imagem">
+          <div class="animal-info">
+            <h3>{{ animal.nome }}</h3>
+            <p>{{ animal.cidade }}, {{ animal.estado }}</p>
+            <div class="detalhes-animal">
+              <span><strong>Tipo:</strong> {{ animal.tipo }}</span>
+              <span><strong>Pelagem:</strong> {{ animal.pelagem }}</span>
+              <span><strong>Porte:</strong> {{ animal.porte }}</span>
+              <span><strong>Idade:</strong> {{ animal.idade }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="sem-resultados" *ngIf="animaisFiltrados.length === 0">
+        Nenhum animal encontrado com os filtros selecionados.
+      </div>
+    </div>
